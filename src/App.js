@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Coins from "./screens/Coins/Coins";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import ProtectedRoute from "./components/ProtectedRoute";
+// import Footer from "./components/Footer/Footer";
+// import Navbar from "./components/Navbar/Navbar";
+// import ProtectedRoute from "./components/ProtectedRoute";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import Dashboard from "./screens/Dashboard/Dashboard";
