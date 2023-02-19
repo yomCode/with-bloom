@@ -10,6 +10,58 @@
 
 .wrapper h1{
     font-family: 'jost', sans-serif;
-    color: white;
+    color: #00aeff;
 
+}
+
+.wrapper input{
+    width: 15rem ;
+    height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.wrapper{
+    width: 50rem;
+    height: 30rem;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.converter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 2rem 0;
+}
+
+.sourceCurrency, .targetCurrency{
+    width: 10rem ;
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.selectWrapper{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 0;
+    
+    
+
+}
+
+.arrow{
+    font-size: 4rem;
+    color: #00aeff;
 }
