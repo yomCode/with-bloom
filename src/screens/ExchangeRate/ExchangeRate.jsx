@@ -1,4 +1,3 @@
-import Input from "antd/es/input/Input";
 import React from "react";
 import Classes from "./ExchangeRate.module.css";
 import { CgArrowsExchange, CgArrowsExchangeAlt } from "react-icons/cg";
