@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Empty } from "antd";
 import Classes from "./Coins.module.css"
 import Pagination from "../../components/Pagination/Pagination";
+import Loader from "../../components/Loader/Loader"
 
 
 const Coins = () =>{
@@ -42,26 +43,22 @@ const Coins = () =>{
     }
 
 
-    const getCoinCallback = async () => {
+    const getCoinCallback = useCallback(async () => {
         setLoading(true);
         await fetch("https://staging-biz.coinprofile.co/v3/currency/rate")
-        .then(res => res.json())
-        .then(data => {
+          .then((res) => res.json())
+          .then((data) => {
             setCoinsData(data.data.rates);
-            console.log(coinsData)
             setLoading(false);
-        })
-        .catch(err => console.log(err))
-    }
-
+          })
+          .catch((err) => console.log(err));
+    }, []);
+    
     useEffect(() => {
-        getCoinCallback()
-    }, [])
+        getCoinCallback();
+    }, [getCoinCallback]);
 
     
-    // if(loading){
-    //     return <h6>Loading...</h6>
-    // }
     return(
         
         <div className={Classes.container}>
@@ -70,7 +67,6 @@ const Coins = () =>{
                     <h1>Coins List</h1>
                     <input type="search" placeholder="Search" value={search} onChange={searchHandler} />
                 </div>
-                {loading && <h6>Loading...</h6>}
                 <div className={Classes.coinBody}>
                     {console.log(currentCoins)}
                     {coinsData !== null ?(
@@ -91,8 +87,9 @@ const Coins = () =>{
                                     }else if(coin.toLowerCase().includes(search.toLowerCase())){
                                         return coin
                                     }
+                                    return null;
                                 }).map((coinKey, index) => {
-                                    const { rate, key } = coinsData[coinKey];
+                                    const { rate } = coinsData[coinKey];
                                     return(
                                         <tr key={index}>
                                             <td>{serialNumber() + index}</td>
@@ -104,13 +101,14 @@ const Coins = () =>{
                             }
                         </tbody>
                     </table>
-                    
+                     
                     ):(
                     <div className={Classes.empty}>
                         <Empty className={Classes.empty_text} />
                     </div>
                     
                     )}
+                    {loading && <Loader /> }
                     <Pagination 
                         totalPages={totalPages} 
                         currentPage={currentPage} 
@@ -120,7 +118,6 @@ const Coins = () =>{
                         handleClick={handleClick}
 
                     />
-                
                 </div>
             </div>
             

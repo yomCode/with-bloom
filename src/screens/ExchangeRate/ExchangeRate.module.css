@@ -1,0 +1,19 @@
+
+.container{
+    width: full;
+    height: 100vh;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+
+}
+
+.wrapper h1{
+    font-family: 'jost', sans-serif;
+    color: white;
+    
+}
