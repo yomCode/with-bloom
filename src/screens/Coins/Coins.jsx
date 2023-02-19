@@ -59,20 +59,21 @@ const Coins = () =>{
     }, [])
 
     
-    if(loading){
-        return <h6>Loading...</h6>
-    }
+    // if(loading){
+    //     return <h6>Loading...</h6>
+    // }
     return(
         
         <div className={Classes.container}>
             <div className={Classes.coinWrapper}>
                 <div className={Classes.coinHeader}>
-                    <h1>Coins</h1>
+                    <h1>Coins List</h1>
                     <input type="search" placeholder="Search" value={search} onChange={searchHandler} />
                 </div>
+                {loading && <h6>Loading...</h6>}
                 <div className={Classes.coinBody}>
                     {console.log(currentCoins)}
-                {coinsData !== null ?(
+                    {coinsData !== null ?(
                     <table className={Classes.coinTable}>
                         <thead>
                             <tr>
@@ -104,12 +105,12 @@ const Coins = () =>{
                         </tbody>
                     </table>
                     
-                ):(
+                    ):(
                     <div className={Classes.empty}>
                         <Empty className={Classes.empty_text} />
                     </div>
                     
-                )}
+                    )}
                     <Pagination 
                         totalPages={totalPages} 
                         currentPage={currentPage} 

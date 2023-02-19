@@ -38,7 +38,7 @@ const Sidebar = ({ children }) => {
 
     return(
         <div className={Classes.container}>
-            <div style={{width: isOpen ? "300px" : "50px"}} className={Classes.sidebar}>
+            <div style={{width: isOpen ? "300px" : "60px"}} className={Classes.sidebar}>
                 <div className={Classes.top_section}>
                 <div style={{display: isOpen ? "block" : "none"}} className={Classes.logo}>
                     <h2>WithBloom</h2>

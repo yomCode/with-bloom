@@ -21,6 +21,7 @@
 
 .coinWrapper h1{
     color: white;
+    font-family: 'jost', sans-serif;
 }
 
 .coinHeader{
@@ -34,6 +35,9 @@
 
 
 .coinBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     min-height: calc(100vh - 10rem);
     color : white;

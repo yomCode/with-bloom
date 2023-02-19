@@ -15,6 +15,7 @@ main{
     color: black;
     width: 230px;
     transition: all 0.5 ease;
+    overflow: hidden;
 }
 
 .top_section{
