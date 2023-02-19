@@ -38,12 +38,12 @@ function ExchangeRate() {
             <select name="" id="" className={Classes.sourceCurrency}>
               {
                 coins.map((coin, index) => {
-                  return <option key={index} value={coin.symbol}>{coin.name}</option>
+                  return <option key={index} value={coin.symbol}>{coin.symbol}</option>
                 }
               )}
             </select>
             {
-              arrow ? < CgArrowsExchangeAlt className={Classes.arrow} onClick={() => setArrow(!arrow)} /> 
+              arrow ? < CgArrowsExchangeAlt className={Classes.arrow} onClick={() => setArrow(!arrow)} />
               : 
               < CgArrowsExchange className={Classes.arrow} onClick={() => setArrow(!arrow)} />
             }
@@ -51,7 +51,7 @@ function ExchangeRate() {
             <select name="" id="" className={Classes.targetCurrency}>
               {
                 coins.map((coin, index) => {
-                  return <option key={index} value={coin.symbol}>{coin.name}</option>
+                  return <option key={index} value={coin.symbol}>{coin.symbol}</option>
                 }
               )}
             </select>
