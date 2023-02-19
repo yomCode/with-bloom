@@ -1,0 +1,141 @@
+
+
+.nav{
+    min-width: full;
+    /* position: fixed; */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    padding: 1rem 5rem;
+}
+
+.nav :only-child{
+    width: 100%;
+    /* background-color: #000; */
+    
+}
+
+.logo{
+    color: rgb(244, 244, 244);
+}
+
+.nav ul{
+    display: none;
+}
+
+.btn{
+    display: none;
+}
+
+.logo img{
+    width: 10px;
+    height: 20px;
+}
+
+.icon{
+    color: white;
+    font-size: 30px;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+.mobile_menu{
+    position: absolute;
+    right: 5%;
+    top: 11.5%;
+    background-color: red;
+    opacity: 0.6;
+    padding: 10px 0;
+    z-index: 50;
+    margin: 0 auto
+}
+
+.mobile_menu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile_menu ul li{
+
+    list-style: none;
+    
+    
+}
+
+.mobile_menu ul li a{
+    color: black;
+}
+
+.btn_link{
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .nav ul{
+        display: flex;
+        gap: 1.2rem;
+        list-style: none;
+        align-items: center;
+        /* gap: 5px; */
+    }
+    
+    ul a{
+        color: white;
+    }
+
+    .btn{
+        display: block;
+        color: white;
+        font-weight: 600;
+        /* background-color: #2427d8; */
+        /* min-width: 60px; */
+        /* height: 10px; */
+        /* border-radius: 8px; */
+        /* padding: 10px 5px 20px 15px; */
+        
+    }
+
+    .icon{
+        display: none;
+    }
+
+    .mobile_menu{
+        display: none;
+    }
+
+    .btn_link{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .btn_login{
+        /* min-width: 99px;
+        height: 45px; */
+        border-radius: 0.2rem 0.2rem 0.2rem 1rem;
+        padding: 0.5rem 1rem;
+        /* font-size: 1.2rem; */
+        font-weight: 500;
+        background-color: rgb(0, 174, 255);
+        color: black;
+    }
+
+    .btn_signup{
+        color: white;
+        border-bottom: 1px solid rgb(0, 174, 255);
+        padding-bottom: 0.5rem;
+    }
+
+
+}

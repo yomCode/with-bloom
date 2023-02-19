@@ -1,0 +1,150 @@
+.container{
+    min-height: calc(100vh - 160px);
+    width: full;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rem;
+    
+}
+
+.container h3{
+    font-size: 50px;
+    font-family: 'Jost', sans-serif;
+    color: white;
+    font-weight: 800;
+    margin: 2rem 0 2rem 0;
+}
+
+.form_wrapper{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem ;
+}
+ 
+
+.form_wrapper form{
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+
+.form_primary{
+    display: flex;
+}
+
+
+.form_secondary{
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    min-width: 15rem;
+    font-size: 1.5rem;
+}
+
+.google{
+    height: 3rem;
+    background-color: #00aeff;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1rem;
+}
+
+.google img{
+    width: 3rem;
+    background-color: white;
+}
+
+.supports{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 10px;
+    color: #00aeff;
+}
+
+.signup_btn{
+    background-color: white;
+    margin: 3rem 0 0 0;
+    padding: 1rem ;
+    text-align: center;
+    border-radius: 0.3rem;
+}
+
+.login_route{
+    color: #00aeff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.divider{
+    margin-left: 1rem;
+    height: 100%;
+}
+
+.divider span{
+    position: relative;
+    height: 150px;
+    width: 40px;
+    display: block;
+    text-align: center;
+    padding-top: 100px;
+    margin: 10px auto;
+    color: white;
+}
+
+.divider span p{
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0rem;
+    margin-top: 1rem;
+}
+
+.divider span:before {
+    border-left: 1px solid white;
+    content: "";
+    display: block;
+    height: 130px;
+    left: 20px;
+    position: absolute;
+    top: -13px;
+    width: 1px;
+    z-index: 0;
+}
+
+.divider span:after {
+    border-left: 1px solid white;
+    content: "";
+    display: block;
+    height: 125px;
+    left: 20px;
+    position: absolute;
+    top: 153px;
+    width: 1px;
+    z-index: 0;
+}
+
+
+.error{
+    background-color: rgb(239, 194, 194);
+    padding: 10px;
+    border-radius: 0.3rem;
+    width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+

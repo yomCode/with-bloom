@@ -1,0 +1,15 @@
+
+
+.btn{
+    min-width: 99px;
+    height: 40px;
+    border-bottom-left-radius: 1rem;
+    padding: 0.1rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgb(0, 174, 255);
+}
+
+.btn:hover{
+    cursor: pointer;
+}

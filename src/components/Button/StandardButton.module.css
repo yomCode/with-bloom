@@ -1,0 +1,15 @@
+.btn{
+    width: 305px;
+    height: 40px;
+    border-radius: 0.2rem;
+    padding: 0.1rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: #00aeff;
+    color: white;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
