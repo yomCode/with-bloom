@@ -10,6 +10,8 @@ main{
 }
 
 
+
+
 .sidebar{
     background-color: white;
     color: black;
@@ -39,7 +41,7 @@ main{
     align-items: center;
     color: black;
     padding: 10px 15px;
-    gap: 15px;
+    gap: 20px;
     transition: all 0.5s;
 }
 
@@ -71,6 +73,6 @@ main{
 
 .link_text{
     font-size: 17px;
-
+    
 }
 

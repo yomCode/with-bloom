@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import Classes from "./Navbar.module.css";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-// import { Link } from "react-router-dom";
+import { useUserAuth } from "../../context/UserAuthContext";
 
 const Navbar = () => {
 
     const [menu, setMenu] = useState(true);
+    const {user} = useUserAuth();
 
-
-
+    if(user){
+      return null;
+    }
   return (
-    <nav className={Classes.nav}>
+
+     <nav className={Classes.nav}>
         <div className={Classes.logo}>
           <a href="/">
             <h2 className={Classes.logo}>WithBloom</h2>

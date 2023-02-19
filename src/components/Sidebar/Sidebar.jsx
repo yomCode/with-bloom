@@ -4,8 +4,9 @@ import { RxDashboard } from "react-icons/rx";
 import { GiCoins } from "react-icons/gi";
 import { AiFillCalculator } from "react-icons/ai";
 import { RiLogoutBoxLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Classes from "./Sidebar.module.css";
+import { useUserAuth } from "../../context/UserAuthContext";
 
 
 
@@ -26,15 +27,23 @@ const Sidebar = ({ children }) => {
             name: "Exchange Rate",
             icon: <AiFillCalculator />
         },
-        {
-            path: "/login",
-            name: "Logout",
-            icon: <RiLogoutBoxLine />
-        }
     ]
 
     const [isOpen, setIsOpen] = React.useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const navigate = useNavigate();
+    const { logout } = useUserAuth();
+
+    const handleLogOut = async (e) => {
+        e.preventDefault();
+        try{
+            await logout();
+            navigate('/login')
+        }catch(err){
+            console.log(err.message);
+        }
+        
+    }
 
     return(
         <div className={Classes.container}>
@@ -50,11 +59,15 @@ const Sidebar = ({ children }) => {
                 
                 <div className={Classes.menu}>
                         {menuItems.map((item, index) => (
-                            <NavLink to={item.path} key={index} activeClassName={Classes.active} className={Classes.link}>
+                            <NavLink to={item.path} key={index} activeclassname={Classes.active} className={Classes.link}>
                                 <div className={Classes.icon}>{item.icon}</div>
                                 <div className={Classes.link_text}>{item.name}</div>
                             </ NavLink>
                         ))}
+                        <NavLink onClick={handleLogOut} className={Classes.link}>
+                            <div className={Classes.icon}>< RiLogoutBoxLine /></div>
+                            <div className={Classes.link_text}><h4>Logout</h4></div>
+                        </ NavLink>
                     </div>
                 </div> 
                 <main className={Classes.main}>

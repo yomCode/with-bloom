@@ -1,12 +1,15 @@
 import React from "react";
-// import Sidebar from "../../components/Sidebar/Sidebar";
+import { useUserAuth } from "../../context/UserAuthContext";
 import Classes from "./Dashboard.module.css"
 
 
 const Dashboard = ({children}) => {
+
+    const {user} = useUserAuth();
+
     return(
         <div className={Classes.container}>
-            <h1>Welcome to your dashboard;</h1>
+            <h1>Welcome  {user.email} </h1>
         </div>
     )
 }
