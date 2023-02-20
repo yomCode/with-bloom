@@ -1,7 +1,7 @@
 
 .container{
     width: full;
-    height: 100vh;
+    min-height: 100vh;
     border: 1px solid white;
     display: flex;
     justify-content: center;
@@ -50,7 +50,7 @@
     line-height: 4rem;
 }
 
-select{
+.form select{
     width: 7rem;
     height: 3rem;
     padding: 0 1rem;
@@ -60,7 +60,7 @@ select{
     font-size: 1.5rem;
 }
 
-input{
+.form input{
     width: 8rem;
     height: 3rem;
     padding: 0 1rem;
