@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Classes from "./ExchangeRate.module.css";
 import {BsArrowDownUp} from "react-icons/bs";
-import { Card } from "antd";
+import { Card, Select } from "antd";
+import { useCoinContext } from "../../context/CoinContext";
+import { StyledSelect } from "../../components/Select";
 
 
 export const Title = () => {
@@ -14,48 +16,30 @@ export const Title = () => {
 };
 
 function ExchangeRate() {
-
   const [arrow, setArrow] = useState(false);
-
 
   const [initialState, setInitialState] = useState({
     currencies: ["BTC", "ETH", "NGN", "USD", "BNB", "BUSD", "USDT", "DASH", "CUSD"],
     base: "BTC",
-    amount: "",
     convertTo: "NGN",
     result: "",
-    coinsRates: {},
   });
 
-  const { currencies, base, amount, convertTo, result, coinsRates } = initialState;
-
-  useEffect(() => {
-    if(amount === isNaN){
-      return
-    }else{
-      const getCurrency = async () => {
-        const response = await fetch(
-          "https://staging-biz.coinprofile.co/v3/currency/rate"
-        );
-        const data = await response.json();
-        setInitialState({
-          ...initialState,
-          coinsRates: data.data.rates,
-        });
-      } 
-      getCurrency();
-    }
-  }, [amount, base, convertTo, initialState])
-  
+  const [amount, setAmount] = useState("");
+  const {coinsData, GetCoinsData} = useCoinContext();
+  const { currencies, base, convertTo, result } = initialState;
 
   const onChangeInput = useCallback((e) => {
-    setInitialState((prevState) => ({
-      ...prevState,
-      amount: e.target.value,
-      result: null,
-    }));
+    setAmount(e.target.value);
   }, []);
-  
+
+  const coinCallBack = useCallback(() => {
+    GetCoinsData();
+  }, [GetCoinsData]);
+
+  useEffect(() => {
+    coinCallBack();
+  }, []);
 
   const onChangeSelect = (e) => {
     setInitialState({
@@ -75,25 +59,28 @@ function ExchangeRate() {
     setArrow(!arrow);
   };
 
-
   useEffect(() => {
-    const keys = Object.keys(coinsRates);
-    const rate = keys.find((coinKey) =>
-      coinKey.includes(`${base}${convertTo}`)
-    )?.rate;
+    const keys = Object.keys(coinsData);
+    keys.map((key) => {
+      if (key === `${base}${convertTo}`) {
+        const { rate } = coinsData[key];
 
-    console.log(`${base}${convertTo}`)
-    if (rate && !isNaN(amount)) {
-      setInitialState((prevState) => ({
-        ...prevState,
-        result: amount * rate,
-      }));
-    }
-    console.log(amount)
-    console.log(rate)
-    console.log(result)
-  }, [coinsRates, base, convertTo, amount, result]);
+        if (rate && !isNaN(amount)) {
+          setInitialState((prevState) => ({
+            ...prevState,
+            result: (amount * rate).toFixed(4),
+          }));
+        }
+        console.log(rate);
+      }
+    });
+    console.log(`${base}${convertTo}`);
 
+    console.log(keys);
+    console.log(amount);
+
+    console.log(result);
+  }, [coinsData, base, convertTo, amount, result]);
 
   return (
     <div className={Classes.container}>
@@ -104,42 +91,43 @@ function ExchangeRate() {
           >
           <h5>{amount} {base} is equivalent to </h5>
           <h3>
-            {amount === "" ? "0 " : result === null ? "Calculating..." : result + " "}
-            {convertTo}
+            {amount === "" ? "0 " + convertTo : result === null ? "Pair not supported" : result + " " + convertTo}
+            
           </h3>
           <div className={Classes.cardWrapper}>
             <div className={Classes.forms}>
               <form action="">
                 <input type="number" value={amount} onChange={onChangeInput} />
-                <select name="base" id=""
+                <StyledSelect name="base" id=""
                 value={base}
                 onChange={onChangeSelect}
+                // className={Classes.select}
                 >
                   { currencies.map((currency) => (
                     <option key={currency} value={currency}>
                       {currency}  
                     </option>
                   ))}
-                </select>
+                </StyledSelect>
               </form>
               <form action="">
                 <input 
                 disabled={true}
                 type="number" 
-                value={amount === "" ? "0" : result === null ? "Calculating..." : result} 
+                value={amount === "" ? "0" : result === null ? "" : result} 
                 onChange={onChangeInput} 
                 />
-                <select name="convertTo" id=""
+                <StyledSelect name="convertTo" id=""
                 value={convertTo}
                 onChange={onChangeSelect}
+                // className={Classes.select}
                 >
-                  {/* {console.log(keys)} */}
                   { currencies.map((currency) => (
                     <option key={currency} value={currency}>
                       {currency}
                     </option>
                   ))}
-                </select>
+                </StyledSelect>
               </form>
             </div>
             <div className={Classes.swap}>

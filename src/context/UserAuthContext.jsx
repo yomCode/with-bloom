@@ -4,6 +4,9 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged, 
+    GoogleAuthProvider,
+    signInWithPopup,
+    sendPasswordResetEmail
     
  } from "firebase/auth";
 
@@ -22,6 +25,16 @@ export const UserAuthContextProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    const googleLogin = () => {
+        const provider = new GoogleAuthProvider();
+        return signInWithPopup(auth, provider);
+    }
+
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email);
+    }
+
+
     const  logout = () => {
         return signOut(auth);
     }
@@ -37,7 +50,14 @@ export const UserAuthContextProvider = ({ children }) => {
         }
     }, [])
     console.log(user)
-    return <userAuthContext.Provider value={{signup, login, logout, user}}> {children} </userAuthContext.Provider>
+    return <userAuthContext.Provider value={{signup, 
+        login, 
+        logout, 
+        user, 
+        googleLogin,
+        resetPassword,
+        
+    }}> {children} </userAuthContext.Provider>
 }
 
 

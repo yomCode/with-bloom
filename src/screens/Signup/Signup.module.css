@@ -50,13 +50,14 @@
 
 .google{
     height: 3rem;
-    background-color: #00aeff;
     border-radius: 0.2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     padding-right: 1rem;
 }
+
+
 
 .google img{
     width: 3rem;

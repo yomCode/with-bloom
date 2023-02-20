@@ -12,7 +12,12 @@ input{
     border-radius: 5px;
     padding: 10px;
     font-size: 19px;
+    
 }
+
+/* .input_wrapper{
+    background-color: white;
+} */
 
 label{
     color: rgb(185, 184, 184);
@@ -20,3 +25,22 @@ label{
     align-self: flex-start;
     
 }
+
+.error_message{
+    color: red;
+    font-size: 1rem;
+    align-self: flex-start;
+}
+
+.input_wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .password_icon {
+    position: absolute;
+    right: 4.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+  }

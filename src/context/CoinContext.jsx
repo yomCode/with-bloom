@@ -19,7 +19,6 @@ export const CoinContextProvider = ({ children }) => {
         }catch(err){
             console.log(err);
         }
-        
     };
 
 

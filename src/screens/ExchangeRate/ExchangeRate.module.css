@@ -50,7 +50,7 @@
     line-height: 4rem;
 }
 
-.form select{
+.ant-select{
     width: 7rem;
     height: 3rem;
     padding: 0 1rem;

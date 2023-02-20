@@ -3,10 +3,11 @@ import { Empty } from "antd";
 import Classes from "./Coins.module.css"
 import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader/Loader"
+import { useCoinContext } from "../../context/CoinContext";
 
 
 const Coins = () =>{
-    const [coinsData, setCoinsData] = useState({});
+    const {coinsData, GetCoinsData} = useCoinContext();
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [coinsPerPage] = useState(10);
@@ -42,22 +43,12 @@ const Coins = () =>{
         console.log(search);
     }
 
-
-    const getCoinCallback = useCallback(async () => {
-        setLoading(true);
-        await fetch("https://staging-biz.coinprofile.co/v3/currency/rate")
-          .then((res) => res.json())
-          .then((data) => {
-            setCoinsData(data.data.rates);
-            setLoading(false);
-          })
-          .catch((err) => console.log(err));
-    }, []);
-    
     useEffect(() => {
-        getCoinCallback();
-    }, [getCoinCallback]);
-
+        setLoading(true);
+        GetCoinsData();
+        setLoading(false);
+    }, [GetCoinsData]);
+    
     
     return(
         
