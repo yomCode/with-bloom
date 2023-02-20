@@ -4,7 +4,7 @@
     min-height: 100vh;
     border: 1px solid white;
     display: flex;
-    padding: 0 5rem;
+    padding: 2rem 5rem;
 }
 
 
@@ -28,10 +28,10 @@
 
 .coinHeader{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
     padding: 2rem;
+    gap: 20rem;
 }
 
 .coinBody{
