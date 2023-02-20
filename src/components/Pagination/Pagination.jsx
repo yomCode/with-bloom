@@ -25,8 +25,8 @@ const Pagination = ({ handleNextClick, handlePreviousClick, pageNeigbors, totalP
             <li>
                 <button onClick={handlePreviousClick}>Prev</button>
             </li>
-            {fetchPageNumbers().map((index, page) => (
-                <li key={index}>
+            {fetchPageNumbers().map((page) => (
+                <li key={page}>
                     <button onClick={() => handleClick(page)}>{page}</button>
                 </li>
             ))}

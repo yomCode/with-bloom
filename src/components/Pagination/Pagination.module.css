@@ -1,4 +1,4 @@
-.pagination{
+/* .pagination{
     display: flex;
     justify-content: center;
     align-items: first baseline ;
@@ -6,7 +6,7 @@
     margin: 1rem 0;
     width: 20rem;
     padding: 0 3rem;
-}
+} */
 
 .pageList{
     display: flex;

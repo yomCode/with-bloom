@@ -8,60 +8,65 @@
     align-items: center;
 }
 
-.wrapper h1{
-    font-family: 'jost', sans-serif;
-    color: #00aeff;
-
-}
-
-.wrapper input{
-    width: 15rem ;
-    height: 2.5rem;
-    padding: 0 1rem;
-    border-radius: 0.3rem;
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
+    gap: 2rem;
+    border: none;
+    width: 40rem;
+    padding: 4rem 0;
 }
 
-.wrapper{
-    width: 50rem;
-    height: 30rem;
-    background-color: white;
-    padding: 2rem;
+.title{
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'jost', sans-serif;
+    line-height: 4rem;
+}
+
+.cardWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cardWrapper form{
+    display: flex;
+    gap: 2rem;
+}
+
+.forms{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border-radius: 0.5rem;
+    gap: 1rem;
 }
 
-.converter{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5rem;
-    padding: 2rem 0;
+.swap, .swap h1{
+    font-size: 3rem;
+    line-height: 4rem;
 }
 
-.sourceCurrency, .targetCurrency{
-    width: 10rem ;
+select{
+    width: 7rem;
     height: 3rem;
     padding: 0 1rem;
     border-radius: 0.3rem;
+    border: none;
+    border-bottom: 1px solid black;
     font-size: 1.5rem;
 }
 
-.selectWrapper{
-    /* width: 100%; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5rem 0;
-    
-    
-
+input{
+    width: 8rem;
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
 }
 
-.arrow{
-    font-size: 4rem;
-    color: #00aeff;
-}

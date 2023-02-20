@@ -87,9 +87,9 @@ const Coins = () =>{
                                     }else if(coin.toLowerCase().includes(search.toLowerCase())){
                                         return coin
                                     }
-                                    return null;
+                                    return null
                                 }).map((coinKey, index) => {
-                                    const { rate } = coinsData[coinKey];
+                                    const { rate} = coinsData[coinKey];
                                     return(
                                         <tr key={index}>
                                             <td>{serialNumber() + index}</td>
@@ -112,7 +112,7 @@ const Coins = () =>{
                     <Pagination 
                         totalPages={totalPages} 
                         currentPage={currentPage} 
-                        pageNeigbors={1} 
+                        pageNeigbors= {1} 
                         handleNextClick={handleNextClick}
                         handlePreviousClick={handlePreviousClick}
                         handleClick={handleClick}
