@@ -90,9 +90,9 @@ const Login = () => {
 
   return (
     <div className="w-[100vw] min-h-[100vh] flex justify-center items-center">
-      <div className=" md:w-[30rem] flex flex-col justify-center items-center gap-4 py-[2rem] md:py-[3rem] border-2 rounded-sm px-4">
+      <div className=" w-[90%] max-w-[30rem] flex flex-col justify-center items-center gap-4 py-[2rem] md:py-[3rem] border-2 rounded-sm px-4">
         <h3 className="text-[white] text-[2rem] md:text-4xl font-bold mb-[2rem] font-jost">Log In!</h3>
-        <div className=" md:w-[100%] flex flex-col justify-center items-center">
+        <div className=" w-[100%] flex flex-col justify-center items-center">
           <div className=" w-[100%] flex flex-col gap-[2rem] items-center">
             {error && (
               <div className="">
