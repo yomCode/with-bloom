@@ -90,7 +90,7 @@ const Login = () => {
 
   return (
     <div className="w-[100vw] min-h-[100vh] flex justify-center items-center">
-      <div className=" min-w-[70%] flex flex-col justify-center items-center gap-4 py-3 border-2 rounded-sm">
+      <div className=" flex flex-col justify-center items-center gap-4 py-3 border-2 rounded-sm px-4">
         <h3 className="text-[white] text-[2rem]">Log In!</h3>
         <div className="  ">
           <div className=" w-[100%] flex flex-col gap-3 items-center">

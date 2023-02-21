@@ -8,5 +8,4 @@ const StandardButton = ({tag, onclick, type}) => {
     )
 }
 
-
 export default StandardButton;
