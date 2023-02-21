@@ -104,7 +104,7 @@ const Signup = () => {
                         <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 md:w-[100%]'>
                             <Input name="email" placeholder="Enter your email address" type="email" label="Email" value={formData.email} onChange={handleChange} error={errors.email} />
                             <Input name="password" placeholder="Enter your password" type="password" label="Password" value={formData.password} onChange={handleChange} error={errors.password}  />
-                            <Input name="confirmPassword" placeholder="Confirm password" type="password" label="Confirm Password" value={formData.confirmPassword} onchange={handleChange} error={errors.confirmPassword}  />
+                            <Input name="confirmPassword" placeholder="Confirm password" type="password" label="Confirm Password" value={formData.confirmPassword} onChange={handleChange} error={errors.confirmPassword}  />
                             <StandardButton type="submit" tag="Create Account" />
                         </form>
                         {loading && <Loader />}
