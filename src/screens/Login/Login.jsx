@@ -89,11 +89,10 @@ const Login = () => {
   };
 
   return (
-    <div className="w-[100vw] min-h-[100vh] flex justify-center items-center">
-      <div className=" w-[90%] max-w-[30rem] flex flex-col justify-center items-center gap-4 py-[2rem] md:py-[3rem] border-2 rounded-sm px-4">
-        <h3 className="text-[white] text-[2rem] md:text-4xl font-bold mb-[2rem] font-jost">Log In!</h3>
-        <div className=" w-[100%] flex flex-col justify-center items-center">
-          <div className=" w-[100%] flex flex-col gap-[2rem] items-center">
+    <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
+            <div className=" flex flex-col justify-center items-center border-2 py-[1rem] w-[90%] max-w-[30rem]">
+                <h3 className="text-[white] text-[3rem] font-bold font-jost mb-[2rem] py-[2rem]" >Log In!</h3>
+                <div className=" p-4 w-[100%] flex flex-col justify-center items-center gap-[2rem]">
             {error && (
               <div className="">
                 <h4>{error}</h4>
@@ -124,18 +123,18 @@ const Login = () => {
               />
               <StandardButton type="submit" tag="Login" />
             </form>
+            {loading && <Loader />}
 
               <Link to="/reset-password">
-                <p className="text-2xl hover:cursor-pointer">Forgot Password? </p>
+                <p className="text-1xl hover:cursor-pointer">Forgot Password? </p>
               </Link>
-              <p className="text-[white] text-3xl mb-4">OR</p>
+              <p className="text-[white] text-[1.6rem] mb-4">OR</p>
           </div>
 
           <div className="justify-self-center self-center">
             <GoogleButton className="" onClick={handleGoogleLogin} />
           </div>
-        </div>
-        <div className="">
+          <div className="mt-[2rem]">
           <p className="text-[white] text-1xl md:text-2xl">
             Dont have an account?{" "}
             <Link to="/signup" className="text-[#00aeff] text-1xl md:text-2xl">
@@ -143,9 +142,11 @@ const Login = () => {
             </Link>
           </p>
         </div>
+        </div>
+        
+        
       </div>
-      {loading && <Loader />}
-    </div>
+     
   );
 };
 

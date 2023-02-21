@@ -14,7 +14,7 @@
 }
 
 .nav.active{
-    background-color: rgb(103, 103, 103);
+    background-color: rgb(55, 55, 55);
 }
 
 
@@ -69,7 +69,7 @@
 .mobile_menu{
     width: 100%;
     position: absolute;
-    top: 12%;
+    top: 100%;
     right: 0%;
     background-color: whitesmoke;
     padding: 10px 0;
