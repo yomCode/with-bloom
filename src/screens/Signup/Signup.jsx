@@ -68,7 +68,7 @@ const Signup = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         setError("");
-        if(!validate()){
+        if(validate()){
            setLoading(true);
             try{
                 await signup(formData.email, formData.password);

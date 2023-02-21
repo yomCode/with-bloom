@@ -64,7 +64,7 @@ const Coins = () =>{
                     <h1>Coins List</h1>
                     <input type="search" placeholder="Search" value={search} onChange={searchHandler} />
                 </div>
-                <div className="w-full overflow-x-auto text-[white] flex flex-col justify-center items-center gap-[2rem] ">
+                <div className="w-full overflow-x-auto text-[white] flex flex-col justify-center items-center gap-[2rem] py-[2rem] ">
                       
                     {coinsData !== null ?(
                     <table className="table-auto w-full">
