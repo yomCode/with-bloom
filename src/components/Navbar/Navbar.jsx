@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Classes from "./Navbar.module.css";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useUserAuth } from "../../context/UserAuthContext";
+import Logo from "../../assets/logo/logo2.png"
+
 
 const Navbar = () => {
 
@@ -16,7 +18,7 @@ const Navbar = () => {
      <nav className={Classes.nav}>
         <div className={Classes.logo}>
           <a href="/">
-            <h2 className={Classes.logo}>WithBloom</h2>
+            <img src={Logo} alt="#" className={Classes.logoImage} />
           </a>
         </div>
         <ul>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Empty } from "antd";
 import Classes from "./Coins.module.css"
 import Pagination from "../../components/Pagination/Pagination";
@@ -43,12 +43,18 @@ const Coins = () =>{
         console.log(search);
     }
 
-    useEffect(() => {
+    
+    const memoizedGetCoinsData = useCallback(() => {
         setLoading(true);
         GetCoinsData();
         setLoading(false);
+        
     }, [GetCoinsData]);
-    
+
+    useEffect(() => {
+        memoizedGetCoinsData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     
     return(
         

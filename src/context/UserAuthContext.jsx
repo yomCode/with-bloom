@@ -19,10 +19,12 @@ export const UserAuthContextProvider = ({ children }) => {
 
     const signup = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
+        
     }
 
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
+        
     }
 
     const googleLogin = () => {

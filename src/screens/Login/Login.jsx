@@ -5,13 +5,16 @@ import { useUserAuth } from "../../context/UserAuthContext";
 import Classes from "./Login.module.css";
 import StandardButton from "../../components/Button/StandardBotton";
 import GoogleButton from "react-google-button";
+import {
+  successNotification,
+} from "../../components/Notification";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  const { login, googleLogin, resetPassword } = useUserAuth();
+  const { login, googleLogin, } = useUserAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [errors, setErrors] = useState({
@@ -67,6 +70,7 @@ const Login = () => {
       try {
         await login(formData.email, formData.password);
         navigate("/dashboard");
+        successNotification("Login Successful");
       } catch (err) {
         switch (err.code) {
           case "auth/user-not-found":

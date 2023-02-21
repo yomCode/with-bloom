@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Input from "../../components/Input/Input";
 import { useUserAuth } from "../../context/UserAuthContext";
 import Classes from "./ResetPassword.module.css";
 import StandardButton from "../../components/Button/StandardBotton";
+import {
+    errorNotification,
+    successNotification,
+  } from "../../components/Notification";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -14,7 +17,6 @@ const ResetPassword = () => {
         email: "",
     });
     const { resetPassword } = useUserAuth();
-    const [error, setError] = useState("");
     const [errors, setErrors] = useState({
         email: "",
     });
@@ -44,8 +46,9 @@ const ResetPassword = () => {
             try {
                 await resetPassword(formData.email);
                 navigate("/login");
+                successNotification("Check your email for further instructions");
             } catch (err) {
-                setError(err.message);
+                errorNotification(err.message);
             }
         }
     };
@@ -58,15 +61,17 @@ const ResetPassword = () => {
                 <h1>Reset Password</h1>
                 <p>Enter your email address and we'll send you a link to reset your password.</p>
                 <form onSubmit={handleSubmit}>
-                    <Input
+                    <label htmlFor="email">Email</label>
+                    <input
                         name="email"
                         placeholder="Enter your email address"
                         type="email"
                         label="Email"
                         value={formData.email}
                         onChange={handleChange}
-                        error={errors.email}
                     />
+                    {errors.email && <p className={Classes.error}>{errors.email}</p>}
+
                     <StandardButton type="submit" tag="Reset Password" onclick={handleSubmit} />
                 </form>
             

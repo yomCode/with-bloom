@@ -19,8 +19,9 @@
     
 }
 
-.logo{
-    color: rgb(244, 244, 244);
+.logoImage{
+    width: 5rem;
+    /* height: 5rem; */
 }
 
 .nav ul{
@@ -31,9 +32,17 @@
     display: none;
 }
 
+.logo{
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo img{
-    width: 10px;
-    height: 20px;
+    width: 4rem;
+    height: 4rem;
 }
 
 .icon{

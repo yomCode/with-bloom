@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Classes from "./ExchangeRate.module.css";
 import {BsArrowDownUp} from "react-icons/bs";
-import { Card, Select } from "antd";
+import { Card } from "antd";
 import { useCoinContext } from "../../context/CoinContext";
 import { StyledSelect } from "../../components/Select";
 
@@ -39,14 +39,15 @@ function ExchangeRate() {
 
   useEffect(() => {
     coinCallBack();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onChangeSelect = (e) => {
-    setInitialState({
-      ...initialState,
-      [e.target.name]: e.target.value,
+  const onChangeSelect = (value, name) => {
+    setInitialState((prevState) => ({
+      ...prevState,
+      [name]: value,
       result: null,
-    });
+    }));
   };
 
   const handleSwap = (e) => {
@@ -68,17 +69,18 @@ function ExchangeRate() {
         if (rate && !isNaN(amount)) {
           setInitialState((prevState) => ({
             ...prevState,
-            result: (amount * rate).toFixed(4),
+             result: (amount * rate).toFixed(4),
           }));
         }
         console.log(rate);
       }
+      return null;
     });
     console.log(`${base}${convertTo}`);
 
     console.log(keys);
     console.log(amount);
-
+    
     console.log(result);
   }, [coinsData, base, convertTo, amount, result]);
 
@@ -100,8 +102,7 @@ function ExchangeRate() {
                 <input type="number" value={amount} onChange={onChangeInput} />
                 <StyledSelect name="base" id=""
                 value={base}
-                onChange={onChangeSelect}
-                // className={Classes.select}
+                onChange={(value) => onChangeSelect(value, 'base')}
                 >
                   { currencies.map((currency) => (
                     <option key={currency} value={currency}>
@@ -119,8 +120,7 @@ function ExchangeRate() {
                 />
                 <StyledSelect name="convertTo" id=""
                 value={convertTo}
-                onChange={onChangeSelect}
-                // className={Classes.select}
+                onChange={(value) => onChangeSelect(value, 'convertTo')}
                 >
                   { currencies.map((currency) => (
                     <option key={currency} value={currency}>

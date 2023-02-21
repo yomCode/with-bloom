@@ -1,8 +1,6 @@
 import { Select } from 'antd';
 import styled from 'styled-components';
-// import 'antd/dist/reset.css';
 
-const { Option } = Select;
 
 export const StyledSelect = styled(Select)`
   width: 7rem;

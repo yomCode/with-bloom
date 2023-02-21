@@ -4,7 +4,9 @@ import Classes from "./Signup.module.css"
 import { useUserAuth } from "../../context/UserAuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import StandardButton from "../../components/Button/StandardBotton";
-import {GoogleButton} from "react-google-button"
+import {
+    successNotification,
+  } from "../../components/Notification";
 
 
 
@@ -71,6 +73,7 @@ const Signup = () => {
             try{
                 await signup(formData.email, formData.password);
                 navigate('/login')
+                successNotification("Account created successfully. Please sign in.");
             }catch(err){
                 switch (err.code) {
                     case "auth/email-already-in-use":
