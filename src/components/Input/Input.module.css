@@ -11,7 +11,7 @@ input{
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px;
-    font-size: 19px;
+    font-size: 13px;
     
 }
 
@@ -23,9 +23,9 @@ input{
 
 label{
     color: rgb(185, 184, 184);
-    font-size: 20px;
+    font-size: 15px;
     /* align-self: flex-start; */
-    margin-left: 2.5rem;
+    margin-left: 1rem;
     
 }
 
@@ -33,7 +33,7 @@ label{
     color: red;
     font-size: 1rem;
     align-self: flex-start;
-    margin-left: 2.5rem;
+    margin-left: 1.5rem;
 }
 
 .input_wrapper {
@@ -44,7 +44,7 @@ label{
   
   .password_icon {
     position: absolute;
-    right: 3rem;
+    right: 1.5rem;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1rem;
   }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Input from "../../components/Input/Input";
-import Classes from "./Signup.module.css"
+// import Classes from "./Signup.module.css"
 import { useUserAuth } from "../../context/UserAuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import StandardButton from "../../components/Button/StandardBotton";
@@ -95,23 +95,22 @@ const Signup = () => {
     }
 
     return(
-        <div className={Classes.container}>
-            <div className={Classes.form_wrapper}>
-                <h3 className={Classes.form_header} >Sign Up</h3>
-                <div className={Classes.form_primary}>
-                    <div className={Classes.form_group}>
-                        {error && <div className={Classes.error}><h4>{error}</h4></div>}
+        <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
+            <div className=" flex flex-col justify-center items-center border-2 py-[1rem]">
+                <h3 className="text-[white] text-2xl" >Sign Up</h3>
+                <div className=" max-w-[70%] p-[1rem] ">
+                        {error && <div className=" text-[white] rounded-sm text-center " ><h4>{error}</h4></div>}
                         <form action="" onSubmit={handleSubmit}>
                             <Input name="email" placeholder="Enter your email address" type="email" label="Email" value={formData.email} onchange={handleChange} error={errors.email} />
                             <Input name="password" placeholder="Enter your password" type="password" label="Password" value={formData.password} onchange={handleChange} error={errors.password}  />
                             <Input name="confirmPassword" placeholder="Confirm password" type="password" label="Confirm Password" value={formData.confirmPassword} onchange={handleChange} error={errors.confirmPassword}  />
                             <StandardButton type="submit" tag="Create Account" />
                         </form>
-                    </div>
+                        <div className="mt-[1rem]">
+                            <p className="text-[1rem]">Already have an account? <Link to="/login" >Login</Link></p>
+                        </div>
                 </div>
-                <div className={Classes.signup_btn}>
-                    <p>Already have an account? <Link to="/login" className={Classes.login_route}>Login</Link></p>
-                </div>
+                
             </div>
         </div>
     )

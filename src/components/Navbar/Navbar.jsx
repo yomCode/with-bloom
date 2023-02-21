@@ -60,10 +60,10 @@ const Navbar = () => {
                 <a href="/">FAQ</a>
               </li>
               <li>
-                <a href="/">Login</a>
+                <a href="/login">Login</a>
               </li>
               <li>
-                <a href="/">Signup</a>
+                <a href="/signup">Signup</a>
               </li>
             </ul>
           </div>

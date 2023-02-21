@@ -22,7 +22,7 @@ return(
         < FiFacebook />
         </div>
         <div>
-            <p>Copyright 2023</p>
+            <p>Copyright &copy;2023</p>
         </div>
     </footer>
 )

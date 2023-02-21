@@ -10,9 +10,9 @@ const Input = ({ type, placeholder, name, label, value, onChange, error }) => {
   };
 
   return (
-    <div className={Classes.container}>
-      <label htmlFor={name}>{label}</label>
-      <div className={Classes.input_wrapper}>
+    <div className='w-[100%] flex flex-col justify-center items-center gap-1'>
+      <label htmlFor={name} className='self-start text-[jost, sans]'>{label}</label>
+      <div className='relative w-[100%] flex flex-col items-center'>
         <input
           type={showPassword ? "text" : type}
           placeholder={placeholder}
@@ -24,17 +24,17 @@ const Input = ({ type, placeholder, name, label, value, onChange, error }) => {
         {type === "password" &&
           (showPassword ? (
             <AiOutlineEye
-              className={Classes.password_icon}
+              className='absolute top-[30%] right-[10%]'
               onClick={toggleShowPassword}
             />
           ) : (
             <AiOutlineEyeInvisible
-              className={Classes.password_icon}
+              className='absolute top-[30%] right-[10%]'
               onClick={toggleShowPassword}
             />
           ))}
       </div>
-      {error && <span className={Classes.error_message}>{error}</span>}
+      {error && <p className='self-start text-[0.8rem] ml-4 text-[red]'>{error}</p>}
     </div>
   );
 };

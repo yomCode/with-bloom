@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Input/Input";
 import { useUserAuth } from "../../context/UserAuthContext";
-import Classes from "./Login.module.css";
 import StandardButton from "../../components/Button/StandardBotton";
 import GoogleButton from "react-google-button";
-import {
-  successNotification,
-} from "../../components/Notification";
+import { successNotification } from "../../components/Notification";
 import Loader from "../../components/Loader/Loader";
 
 const Login = () => {
@@ -15,7 +12,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const { login, googleLogin, } = useUserAuth();
+  const { login, googleLogin } = useUserAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -46,9 +43,9 @@ const Login = () => {
     if (!formData.password) {
       errors.password = "Password is required";
       isValid = false;
-    }else if(!formData.password.length >= 6){
-        errors.password = "Password must be at least 6 characters";
-        isValid = false;
+    } else if (!formData.password.length >= 6) {
+      errors.password = "Password must be at least 6 characters";
+      isValid = false;
     }
 
     setErrors(errors);
@@ -92,17 +89,21 @@ const Login = () => {
   };
 
   return (
-    <div className={Classes.container}>
-      <div className={Classes.form_wrapper}>
-        <h3 className={Classes.form_header}>Log In!</h3>
-        <div className={Classes.form_primary}>
-          <div className={Classes.form_group}>
+    <div className="w-[100vw] min-h-[100vh] flex justify-center items-center">
+      <div className=" min-w-[70%] flex flex-col justify-center items-center gap-4 py-3 border-2 rounded-sm">
+        <h3 className="text-[white] text-[2rem]">Log In!</h3>
+        <div className="  ">
+          <div className=" w-[100%] flex flex-col gap-3 items-center">
             {error && (
-              <div className={Classes.error}>
+              <div className="">
                 <h4>{error}</h4>
               </div>
             )}
-            <form action="" onSubmit={handleSubmit}>
+            <form
+              action=""
+              onSubmit={handleSubmit}
+              className="w-[100%] flex flex-col items-center gap-4"
+            >
               <Input
                 name="email"
                 placeholder="Enter your email address"
@@ -124,27 +125,28 @@ const Login = () => {
               <StandardButton type="submit" tag="Login" />
             </form>
 
-            <div className={Classes.supports}>
-              <Link to="/reset-password"><p>Forgot Password? </p></Link>
-                            
-                        </div>
-                    </div>
-                    <div className={Classes.divider}>
-                        <span><p>OR</p></span>
-                    </div>
-                    
-                    <div className={Classes.form_secondary}>
-                        <GoogleButton className={Classes.google} onClick={handleGoogleLogin} /> 
-                    </div>
-                </div>
-                <div className={Classes.signup_btn}>
-                    <p>Dont have an account? <Link to="/signup" className={Classes.signup_route}>Signup</Link></p>
-                </div>
-            </div>
-            {loading && <Loader />}
-        </div>
-    )
-}
+              <Link to="/reset-password">
+                <p>Forgot Password? </p>
+              </Link>
+              <p className="text-[white] text-1xl mb-4">OR</p>
+          </div>
 
+          <div className="">
+            <GoogleButton className="" onClick={handleGoogleLogin} />
+          </div>
+        </div>
+        <div className="">
+          <p className="text-[white]">
+            Dont have an account?{" "}
+            <Link to="/signup" className="text-[#00aeff]">
+              Signup
+            </Link>
+          </p>
+        </div>
+      </div>
+      {loading && <Loader />}
+    </div>
+  );
+};
 
 export default Login;

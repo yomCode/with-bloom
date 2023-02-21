@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     z-index: 999;
-    padding: 1rem 5rem;
+    padding: 1rem 1rem;
 }
 
 .nav :only-child{
@@ -55,14 +55,13 @@
 }
 
 .mobile_menu{
+    width: 100%;
     position: absolute;
-    right: 5%;
-    top: 11.5%;
-    background-color: red;
-    opacity: 0.6;
+    top: 12%;
+    right: 0%;
+    background-color: whitesmoke;
     padding: 10px 0;
-    z-index: 50;
-    margin: 0 auto
+    z-index: 999;
 }
 
 .mobile_menu ul{
@@ -89,6 +88,9 @@
 }
 
 @media screen and (min-width: 600px) {
+    .nav{
+        padding: 1rem 5rem;
+    }
     .nav ul{
         display: flex;
         gap: 1.2rem;

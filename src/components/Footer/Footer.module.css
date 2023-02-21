@@ -1,5 +1,5 @@
 .container{
-    width: 100%;
+    width: full;
     height: 100px;
     background-color: white;
     margin-top: 5rem;
@@ -18,7 +18,7 @@
 
 .icons{
     display: flex;
-    gap: 50px;
+    gap: 30px;
     margin-top: 20px;
     font-size: 20px;
 }
