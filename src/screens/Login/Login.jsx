@@ -8,6 +8,7 @@ import GoogleButton from "react-google-button";
 import {
   successNotification,
 } from "../../components/Notification";
+import Loader from "../../components/Loader/Loader";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ const Login = () => {
   const { login, googleLogin, } = useUserAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({
     email: "",
     password: "",
@@ -66,6 +68,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
     if (validate()) {
       try {
         await login(formData.email, formData.password);
@@ -85,6 +88,7 @@ const Login = () => {
         }
       }
     }
+    setLoading(false);
   };
 
   return (
@@ -137,6 +141,7 @@ const Login = () => {
                     <p>Dont have an account? <Link to="/signup" className={Classes.signup_route}>Signup</Link></p>
                 </div>
             </div>
+            {loading && <Loader />}
         </div>
     )
 }

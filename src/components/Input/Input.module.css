@@ -15,14 +15,17 @@ input{
     
 }
 
-/* .input_wrapper{
-    background-color: white;
-} */
+.input_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 label{
     color: rgb(185, 184, 184);
     font-size: 20px;
-    align-self: flex-start;
+    /* align-self: flex-start; */
+    margin-left: 2.5rem;
     
 }
 
@@ -30,6 +33,7 @@ label{
     color: red;
     font-size: 1rem;
     align-self: flex-start;
+    margin-left: 2.5rem;
 }
 
 .input_wrapper {
@@ -40,7 +44,7 @@ label{
   
   .password_icon {
     position: absolute;
-    right: 4.5rem;
+    right: 3rem;
     cursor: pointer;
     font-size: 2rem;
   }
