@@ -86,19 +86,17 @@ function ExchangeRate() {
 
   return (
     <div className={Classes.container}>
-      <div>
-        <div>
-          < Card className={Classes.card}
+          < Card className=''
           title={<Title level={2}>Custom Title</Title>}
           >
-          <h5>{amount} {base} is equivalent to </h5>
-          <h3>
+          <h5 className="text-[1rem]">{amount} {base} is equivalent to </h5>
+          <h3 className="text-[1rem] font-bold">
             {amount === "" ? "0 " + convertTo : result === null ? "Pair not supported" : result + " " + convertTo}
             
           </h3>
           <div className={Classes.cardWrapper}>
             <div className={Classes.forms}>
-              <form action="">
+              <form action="" className="flex flex-col gap-[1rem] md:flex-row ">
                 <input type="number" value={amount} onChange={onChangeInput} />
                 <StyledSelect name="base" id=""
                 value={base}
@@ -111,7 +109,7 @@ function ExchangeRate() {
                   ))}
                 </StyledSelect>
               </form>
-              <form action="">
+              <form action="" className="flex flex-col gap-[1rem] md:flex-row ">
                 <input 
                 disabled={true}
                 type="number" 
@@ -137,9 +135,6 @@ function ExchangeRate() {
             </div>
           </div>
           </Card>
-
-        </div>
-      </div>
     </div>
   )
 }
