@@ -12,6 +12,7 @@ import {
 const Signup = () => {
     const{ signup } = useUserAuth();
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({
         email: "",
         password: "",
@@ -67,7 +68,7 @@ const Signup = () => {
         e.preventDefault();
         setError("");
         if(!validate()){
-           
+           setLoading(true);
             try{
                 await signup(formData.email, formData.password);
                 navigate('/login')
@@ -88,6 +89,7 @@ const Signup = () => {
                     break;
                 }
             }
+            setLoading(false);
         }
         
     }
@@ -104,6 +106,7 @@ const Signup = () => {
                             <Input name="confirmPassword" placeholder="Confirm password" type="password" label="Confirm Password" value={formData.confirmPassword} onchange={handleChange} error={errors.confirmPassword}  />
                             <StandardButton type="submit" tag="Create Account" />
                         </form>
+                        {loading && <Loader />}
                         <div className="md:w-[100%] justify-self-center text-center">
                             <p className="text-[1rem] text-[white]">Already have an account? <Link to="/login" className="text-[#00aeff]" >Login</Link></p>
                         </div>
