@@ -64,15 +64,15 @@ const Coins = () =>{
                     <h1>Coins List</h1>
                     <input type="search" placeholder="Search" value={search} onChange={searchHandler} />
                 </div>
-                <div className={Classes.coinBody}>
-                    {console.log(currentCoins)}
+                <div className="w-full overflow-x-auto text-[white] flex flex-col justify-center items-center gap-[2rem] ">
+                      
                     {coinsData !== null ?(
-                    <table className={Classes.coinTable}>
+                    <table className="table-auto w-full">
                         <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Currency Pair</th>
-                                <th>Price</th>
+                            <tr className="bg-gray-200">
+                                <th className="px-4 py-2  text-[black] text-[1rem] text-left">No.</th>
+                                <th className="px-4 py-2 text-[black] text-[1rem] text-left">Currency Pair</th>
+                                <th className="px-4 py-2 text-[black] text-[1rem] text-left">Price</th>
                             </tr>
                         </thead>
                         
@@ -88,10 +88,10 @@ const Coins = () =>{
                                 }).map((coinKey, index) => {
                                     const { rate} = coinsData[coinKey];
                                     return(
-                                        <tr key={index}>
-                                            <td>{serialNumber() + index}</td>
-                                            <td>{coinKey}</td>
-                                            <td>{rate}</td>
+                                        <tr key={index} className={`${index % 2 === 0 ? 'text-[white]'  :  "bg-gray-100 text-[black]"}`}>
+                                            <td className="border px-4 py-2">{serialNumber() + index}</td>
+                                            <td className="border px-4 py-2">{coinKey}</td>
+                                            <td className="border px-4 py-2">{rate.toFixed(2)}</td>
                                         </tr>
                                     )
                                 })

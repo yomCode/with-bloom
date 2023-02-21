@@ -2,7 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Coins from "./screens/Coins/Coins";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute, { IsAuth } from "./components/ProtectedRoute";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import Dashboard from "./screens/Dashboard/Dashboard";
@@ -21,8 +21,16 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={
+            <IsAuth>
+            <Login />
+            </IsAuth>
+          } />
+            <Route path="/signup" element={
+            <IsAuth>
+            <Signup />
+            </IsAuth>
+            } />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route
               path="/dashboard"

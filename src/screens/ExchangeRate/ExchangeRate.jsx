@@ -69,7 +69,7 @@ function ExchangeRate() {
         if (rate && !isNaN(amount)) {
           setInitialState((prevState) => ({
             ...prevState,
-             result: (amount * rate).toFixed(4),
+             result: (amount * rate).toFixed(2),
           }));
         }
         console.log(rate);

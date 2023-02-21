@@ -1,27 +1,39 @@
 
 
 .nav{
-    min-width: full;
-    /* position: fixed; */
-    height: 60px;
+    background-color: transparent;
+    height: 80px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav.active{
+    background-color: rgb(103, 103, 103);
+}
+
+
+.navContainer{
+    max-width: 1500px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 999;
     padding: 1rem 1rem;
 }
 
 .nav :only-child{
     width: 100%;
-    /* background-color: #000; */
     
 }
 
 .logoImage{
     width: 5rem;
-    /* height: 5rem; */
 }
 
 .nav ul{

@@ -23,24 +23,24 @@ main{
 .top_section{
     display: flex;
     align-items: center;
-    padding: 20px 15px;
+    padding: 20px 0px;
 }
 
 .logo{
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .bars{
     display: flex;
     font-size: 25px;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 .link{
     display: flex;
     align-items: center;
     color: black;
-    padding: 10px 15px;
+    padding: 5px 5px;
     gap: 20px;
     transition: all 0.5s;
 }
@@ -72,7 +72,7 @@ main{
 }
 
 .link_text{
-    font-size: 17px;
+    font-size: 10px;
     
 }
 

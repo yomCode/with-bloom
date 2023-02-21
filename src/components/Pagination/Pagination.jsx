@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import Classes from "./Pagination.module.css";
 
 
@@ -23,7 +24,7 @@ const Pagination = ({ handleNextClick, handlePreviousClick, pageNeigbors, totalP
     <nav className={Classes.pagination}>
         <ul className={Classes.pageList}>
             <li>
-                <button onClick={handlePreviousClick}>Prev</button>
+                <button onClick={handlePreviousClick}><FaLessThan /></button>
             </li>
             {fetchPageNumbers().map((page) => (
                 <li key={page}>
@@ -31,7 +32,7 @@ const Pagination = ({ handleNextClick, handlePreviousClick, pageNeigbors, totalP
                 </li>
             ))}
             <li>
-                <button onClick={handleNextClick}>Next</button>
+                <button onClick={handleNextClick}><FaGreaterThan /></button>
             </li>
         </ul>
       
