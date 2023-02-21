@@ -11,7 +11,7 @@ const Input = ({ type, placeholder, name, label, value, onChange, error }) => {
 
   return (
     <div className='w-[100%] flex flex-col justify-center items-center gap-1'>
-      <label htmlFor={name} className='self-start text-[jost, sans]'>{label}</label>
+      <label htmlFor={name} className='self-start md:ml-[2.4rem]'>{label}</label>
       <div className='relative w-[100%] flex flex-col items-center'>
         <input
           type={showPassword ? "text" : type}
@@ -34,7 +34,7 @@ const Input = ({ type, placeholder, name, label, value, onChange, error }) => {
             />
           ))}
       </div>
-      {error && <p className='self-start text-[0.8rem] ml-4 text-[red]'>{error}</p>}
+      {error && <p className='self-start text-[0.8rem] ml-4 md:ml-[2.4rem] text-[red]'>{error}</p>}
     </div>
   );
 };

@@ -90,10 +90,10 @@ const Login = () => {
 
   return (
     <div className="w-[100vw] min-h-[100vh] flex justify-center items-center">
-      <div className=" flex flex-col justify-center items-center gap-4 py-3 border-2 rounded-sm px-4">
-        <h3 className="text-[white] text-[2rem]">Log In!</h3>
-        <div className="  ">
-          <div className=" w-[100%] flex flex-col gap-3 items-center">
+      <div className=" md:w-[30rem] flex flex-col justify-center items-center gap-4 py-[2rem] md:py-[3rem] border-2 rounded-sm px-4">
+        <h3 className="text-[white] text-[2rem] md:text-4xl font-bold mb-[2rem] font-jost">Log In!</h3>
+        <div className=" md:w-[100%] flex flex-col justify-center items-center">
+          <div className=" w-[100%] flex flex-col gap-[2rem] items-center">
             {error && (
               <div className="">
                 <h4>{error}</h4>
@@ -126,19 +126,19 @@ const Login = () => {
             </form>
 
               <Link to="/reset-password">
-                <p>Forgot Password? </p>
+                <p className="text-2xl hover:cursor-pointer">Forgot Password? </p>
               </Link>
-              <p className="text-[white] text-1xl mb-4">OR</p>
+              <p className="text-[white] text-3xl mb-4">OR</p>
           </div>
 
-          <div className="">
+          <div className="justify-self-center self-center">
             <GoogleButton className="" onClick={handleGoogleLogin} />
           </div>
         </div>
         <div className="">
-          <p className="text-[white]">
+          <p className="text-[white] text-1xl md:text-2xl">
             Dont have an account?{" "}
-            <Link to="/signup" className="text-[#00aeff]">
+            <Link to="/signup" className="text-[#00aeff] text-1xl md:text-2xl">
               Signup
             </Link>
           </p>

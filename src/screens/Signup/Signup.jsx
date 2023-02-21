@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Input from "../../components/Input/Input";
-// import Classes from "./Signup.module.css"
 import { useUserAuth } from "../../context/UserAuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import StandardButton from "../../components/Button/StandardBotton";
@@ -30,7 +29,6 @@ const Signup = () => {
     const handleChange = (e) => {
         const value = e.target.value;
         setFormData({ ...formData, [e.target.name]: value });
-        // setErrors({ ...errors, [e.target.name]: "" });
     };
 
     const validate = () => {
@@ -96,17 +94,17 @@ const Signup = () => {
 
     return(
         <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
-            <div className=" flex flex-col justify-center items-center border-2 py-[1rem]">
-                <h3 className="text-[white] text-[2rem]" >Sign Up</h3>
-                <div className=" p-4 ">
-                        {error && <div className=" text-[white] rounded-sm text-center " ><h4>{error}</h4></div>}
-                        <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4'>
-                            <Input name="email" placeholder="Enter your email address" type="email" label="Email" value={formData.email} onchange={handleChange} error={errors.email} />
-                            <Input name="password" placeholder="Enter your password" type="password" label="Password" value={formData.password} onchange={handleChange} error={errors.password}  />
+            <div className=" flex flex-col justify-center items-center border-2 py-[1rem] md:w-[30rem]">
+                <h3 className="text-[white] text-[3rem] font-bold font-jost mb-[2rem] py-[2rem]" >Sign Up</h3>
+                <div className=" p-4 md:w-[100%] flex flex-col gap-[2rem]">
+                        {error && <div className=" rounded-sm text-center text-[black] border w-[80%] self-center bg-[#ffa3a3]" ><h4>{error}</h4></div>}
+                        <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 md:w-[100%]'>
+                            <Input name="email" placeholder="Enter your email address" type="email" label="Email" value={formData.email} onChange={handleChange} error={errors.email} />
+                            <Input name="password" placeholder="Enter your password" type="password" label="Password" value={formData.password} onChange={handleChange} error={errors.password}  />
                             <Input name="confirmPassword" placeholder="Confirm password" type="password" label="Confirm Password" value={formData.confirmPassword} onchange={handleChange} error={errors.confirmPassword}  />
                             <StandardButton type="submit" tag="Create Account" />
                         </form>
-                        <div className="mt-[1rem]">
+                        <div className="md:w-[100%] justify-self-center text-center">
                             <p className="text-[1rem] text-[white]">Already have an account? <Link to="/login" className="text-[#00aeff]" >Login</Link></p>
                         </div>
                 </div>
