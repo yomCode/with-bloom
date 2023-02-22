@@ -19,17 +19,17 @@ const Input = ({ type, placeholder, name, label, value, onChange, error }) => {
           name={name}
           value={value}
           onChange={onChange}
-          className={error ? Classes.input_error : ""}
+          className={Classes.formInput}
         />
         {type === "password" &&
           (showPassword ? (
             <AiOutlineEye
-              className='absolute top-[30%] right-[10%]'
+              className='absolute top-[30%] right-[14%]'
               onClick={toggleShowPassword}
             />
           ) : (
             <AiOutlineEyeInvisible
-              className='absolute top-[30%] right-[10%]'
+              className='absolute top-[30%] right-[12%] text-[1.4rem]'
               onClick={toggleShowPassword}
             />
           ))}

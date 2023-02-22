@@ -5,13 +5,13 @@
     gap: 5px;
 }
 
-input{
+.formInput{
     width: 80%;
-    height: 30px;
+    height: 50px;
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px;
-    font-size: 13px;
+    font-size: 17px;
     
 }
 
@@ -42,9 +42,4 @@ label{
     position: relative;
   }
   
-  .password_icon {
-    position: absolute;
-    right: 1.5rem;
-    cursor: pointer;
-    font-size: 1rem;
-  }
+  

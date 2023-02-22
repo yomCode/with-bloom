@@ -72,8 +72,8 @@ const Signup = () => {
            setLoading(true);
             try{
                 await signup(formData.email, formData.password);
-                navigate('/login')
-                successNotification("Account created successfully. Please sign in.");
+                navigate('/dashboard')
+                successNotification("Account created successfully. ");
             }catch(err){
                 switch (err.code) {
                     case "auth/email-already-in-use":
