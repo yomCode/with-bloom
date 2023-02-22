@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import { heroInfo } from "../../constant";
+import { Link } from "react-router-dom";
 
 
 const Hero = () => {
@@ -17,7 +18,9 @@ const Hero = () => {
                 </p>
                 
                 <div className="mt-2 md:self-start">
-                    <Button tag={heroInfo.buttonText} className='' />
+                    <Link to='/signup'>
+                        <Button tag={heroInfo.buttonText} />
+                    </Link>
                 </div>
             </div>
         </div>
