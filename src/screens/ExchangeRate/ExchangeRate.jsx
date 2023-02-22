@@ -4,6 +4,7 @@ import {BsArrowDownUp} from "react-icons/bs";
 import { Card } from "antd";
 import { useCoinContext } from "../../context/CoinContext";
 import { StyledSelect } from "../../components/Select";
+import { supportedCoins, exchangeSettings } from "../../constant";
 
 
 export const Title = () => {
@@ -19,9 +20,9 @@ function ExchangeRate() {
   const [arrow, setArrow] = useState(false);
 
   const [initialState, setInitialState] = useState({
-    currencies: ["BTC", "ETH", "NGN", "USD", "BNB", "BUSD", "USDT", "DASH", "CUSD"],
-    base: "BTC",
-    convertTo: "NGN",
+    currencies: {supportedCoins},
+    base: exchangeSettings.base,
+    convertTo: exchangeSettings.convertTo,
     result: "",
   });
 

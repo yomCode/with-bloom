@@ -6,8 +6,8 @@ const Homepage = () => {
 
     return(
         <div>
-            <Hero />
-            <Features />
+            <Hero data-testid="hero" />
+            <Features data-testid="features" />
         </div>
     )
 }

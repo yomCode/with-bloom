@@ -24,7 +24,7 @@ const Pagination = ({ handleNextClick, handlePreviousClick, pageNeigbors, totalP
     <nav className={Classes.pagination}>
         <ul className={Classes.pageList}>
             <li>
-                <button onClick={handlePreviousClick}><FaLessThan /></button>
+                <button onClick={handlePreviousClick} data-testid="previous"><FaLessThan /></button>
             </li>
             {fetchPageNumbers().map((page) => (
                 <li key={page}>
@@ -32,7 +32,7 @@ const Pagination = ({ handleNextClick, handlePreviousClick, pageNeigbors, totalP
                 </li>
             ))}
             <li>
-                <button onClick={handleNextClick}><FaGreaterThan /></button>
+                <button onClick={handleNextClick} data-testid="next"><FaGreaterThan /></button>
             </li>
         </ul>
       

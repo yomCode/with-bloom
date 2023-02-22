@@ -6,7 +6,7 @@ import { GoPrimitiveDot } from "react-icons/go"
 const FeatureCard = ({icon, heading, text}) => {
     return(
         <div className={Classes.container}>
-            <h6 className={Classes.icon}>{icon}</h6>
+            <h6 className={Classes.icon} data-testid="icon">{icon}</h6>
             <h6 className={Classes.divide}><GoPrimitiveDot /></h6>
             <div className={Classes.details}>
                 <h6 className={Classes.heading}>{heading}</h6>
