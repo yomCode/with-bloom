@@ -20,7 +20,7 @@ function ExchangeRate() {
   const [arrow, setArrow] = useState(false);
 
   const [initialState, setInitialState] = useState({
-    currencies: {supportedCoins},
+    currencies: supportedCoins,
     base: exchangeSettings.base,
     convertTo: exchangeSettings.convertTo,
     result: "",
