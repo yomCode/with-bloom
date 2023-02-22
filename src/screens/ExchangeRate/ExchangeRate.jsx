@@ -26,6 +26,8 @@ function ExchangeRate() {
     result: "",
   });
 
+  console.log(initialState);
+
   const [amount, setAmount] = useState("");
   const {coinsData, GetCoinsData} = useCoinContext();
   const { currencies, base, convertTo, result } = initialState;
@@ -103,6 +105,7 @@ function ExchangeRate() {
                 value={base}
                 onChange={(value) => onChangeSelect(value, 'base')}
                 >
+                  
                   { currencies.map((currency) => (
                     <option key={currency} value={currency}>
                       {currency}  

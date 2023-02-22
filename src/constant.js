@@ -46,7 +46,11 @@ export const supportedCoins = [
 ]
 
 export const exchangeSettings = [
-    {base: "BTC"},
-    {convertTo: "NGN"},
+    {
+        base: "BTC"
+    },
+    {
+        convertTo: "NGN"
+    },
 
 ]
