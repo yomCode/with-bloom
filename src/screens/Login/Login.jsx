@@ -94,7 +94,7 @@ const Login = () => {
                 <h3 className="text-[white] text-[3rem] font-bold font-jost mb-[2rem] py-[2rem]" >Log In!</h3>
                 <div className=" p-4 w-[100%] flex flex-col justify-center items-center gap-[2rem]">
             {error && (
-              <div className="">
+              <div className=" bg-[#ed8989] p-3 rounded-sm">
                 <h4>{error}</h4>
               </div>
             )}
