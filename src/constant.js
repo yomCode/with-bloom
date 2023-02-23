@@ -45,12 +45,9 @@ export const supportedCoins = [
     "CUSD"
 ]
 
-export const exchangeSettings = [
-    {
-        base: "BTC"
-    },
-    {
-        convertTo: "NGN"
-    },
 
-]
+
+export const baseCurr = "BTC"
+
+export const convertToCurr = "NGN";
+

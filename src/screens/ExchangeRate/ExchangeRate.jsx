@@ -4,7 +4,7 @@ import {BsArrowDownUp} from "react-icons/bs";
 import { Card } from "antd";
 import { useCoinContext } from "../../context/CoinContext";
 import { StyledSelect } from "../../components/Select";
-import { supportedCoins, exchangeSettings } from "../../constant";
+import { supportedCoins, baseCurr, convertToCurr } from "../../constant";
 
 
 export const Title = () => {
@@ -21,8 +21,8 @@ function ExchangeRate() {
 
   const [initialState, setInitialState] = useState({
     currencies: supportedCoins,
-    base: exchangeSettings.base,
-    convertTo: exchangeSettings.convertTo,
+    base: baseCurr,
+    convertTo: convertToCurr,
     result: "",
   });
 
@@ -89,18 +89,19 @@ function ExchangeRate() {
 
   return (
     <div className={Classes.container}>
-          < Card className=''
-          title={<Title level={2}>Custom Title</Title>}
+          < Card className='w-[90%] flex flex-col justify-center items-center'
+          title={<Title level={2} />}
           >
-          <h5 className="text-[1rem]">{amount} {base} is equivalent to </h5>
+          <h5 className="text-[1rem]"> {amount} <span className="font-bold">{base}</span> is equivalent to </h5>
+          {console.log('Amount: ', amount, 'Base: ', base, 'ConvertTo: ', convertTo, 'Result: ', result)}
           <h3 className="text-[1rem] font-bold">
             {amount === "" ? "0 " + convertTo : result === null ? "Pair not supported" : result + " " + convertTo}
             
           </h3>
-          <div className={Classes.cardWrapper}>
-            <div className={Classes.forms}>
-              <form action="" className="flex flex-col gap-[1rem] md:flex-row ">
-                <input type="number" value={amount} onChange={onChangeInput} />
+          <div className=' flex items-center justify-center gap-[2.5rem] p-[2rem]'>
+            <div className=' w-[70%] h-[90%] flex flex-col gap-4 '>
+              <form action="" className="flex flex-col justify-center gap-[1rem] md:flex-row ">
+                <input type="number" value={amount} onChange={onChangeInput} placeholder='Amount' className='border-2 w-[80%] h-[2.5rem] bg-[#dbdbdbd4] rounded-md px-2 text-[black]' />
                 <StyledSelect name="base" id=""
                 value={base}
                 onChange={(value) => onChangeSelect(value, 'base')}
@@ -113,12 +114,13 @@ function ExchangeRate() {
                   ))}
                 </StyledSelect>
               </form>
-              <form action="" className="flex flex-col gap-[1rem] md:flex-row ">
+              <form action="" className="flex flex-col gap-[1rem] md:flex-row justify-center">
                 <input 
                 disabled={true}
                 type="number" 
                 value={amount === "" ? "0" : result === null ? "" : result} 
                 onChange={onChangeInput} 
+                className='border-2 w-[80%] h-[2.5rem] bg-[#dbdbdbd4] rounded-md px-2 text-[black]'
                 />
                 <StyledSelect name="convertTo" id=""
                 value={convertTo}
