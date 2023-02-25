@@ -87,7 +87,7 @@ const Coins = () =>{
                    <h1>Coins List</h1>
                    <input type="search" placeholder="Search" value={search} onChange={searchHandler} />
                </div>
-               {screenSize > 500 ? (
+               {screenSize > 639 ? (
                    <div className="w-100 overflow-x-auto text-[white] flex flex-col justify-center items-center gap-[2rem] py-[2rem] ">
                     
                    {coinsData !== null ?(
@@ -145,9 +145,14 @@ const Coins = () =>{
 
                ) : (
                    <div className="w-100 text-[white] flex flex-col justify-center items-center gap-[2rem] py-[2rem] ">
+                    <div className="w-[90%] flex justify-between items-center gap-2">
+                        <h6 className="basis-1/3">No.</h6>
+                        <h6 className="basis-1/3">Currency Pair</h6>
+                        <h6 className="basis-1/3">Price</h6>
+                    </div>
                     
                    {coinsData !== null ?(
-                   <div>
+                   <div className="w-[100%] bg-[blue]">
                        {currentCoins.filter((coin) => {
                                        if(search === ""){
                                            return coin
@@ -158,11 +163,11 @@ const Coins = () =>{
                            }).map((coinKey, index) => {
                                const { rate} = coinsData[coinKey];
                            return(
-                               <div key={index} className='flex flex-col'>
-                                   <div className="flex flex-col gap-1 border-2 border-[#7e6a17] p-3 mb-3 rounded-md">
-                                       <p>No: {serialNumber() + index}</p>
-                                       <p>Currency Pair: {coinKey}</p>
-                                       <p>Price: {rate.toFixed(2)}</p>
+                               <div key={index} className='flex flex-col bg-[yellow]'>
+                                   <div className="flex justify-between gap-2 border-2 border-[#7e6a17] p-3 mb-3 rounded-md">
+                                       <p className="basis-1/3">{serialNumber() + index}</p>
+                                       <p className="basis-1/3">{coinKey}</p>
+                                       <p className="basis-1/3">{rate.toFixed(2)}</p>
                                    </div>
                                </div>
                            )})
