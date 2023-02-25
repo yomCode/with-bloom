@@ -57,8 +57,10 @@ const Signup = () => {
         if (!formData.confirmPassword) {
             errors.confirmPassword = "Password confirmation is required";
             isValid = false;
-          }else if(!formData.password === formData.confirmPassword){
+          }else if(formData.password !== formData.confirmPassword){
+            
               setError("Passwords do not match");
+              isValid = false;
           }
     
         setErrors(errors);
@@ -98,7 +100,7 @@ const Signup = () => {
     return(
         <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
             <div className=" flex flex-col justify-center items-center border-2 py-[1rem] w-[90%] max-w-[30rem]">
-                <h3 className="text-[white] text-[3rem] font-bold font-jost mb-[2rem] py-[2rem]" >Sign Up</h3>
+                <h3 className="text-[white] text-[2rem] font-bold font-jost mb-[1rem]" >Sign Up</h3>
                 <div className=" p-4 w-[100%] flex flex-col gap-[2rem]">
                         {error && <div className=" rounded-sm text-center text-[black] border w-[80%] self-center bg-[#ffa3a3]" ><h4>{error}</h4></div>}
                         <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 md:w-[100%]'>
