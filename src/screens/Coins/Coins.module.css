@@ -18,7 +18,9 @@
  
  .coinWrapper input{
     width: 40%;
-    height: 1rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    padding: 0 1rem;
  }
  
  

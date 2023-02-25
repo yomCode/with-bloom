@@ -94,16 +94,15 @@ const Signup = () => {
             }
             setLoading(false);
         }
-        
     }
 
     return(
         <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
             <div className=" flex flex-col justify-center items-center border-2 py-[1rem] w-[90%] max-w-[30rem]">
                 <h3 className="text-[white] text-[2rem] font-bold font-jost mb-[1rem]" >Sign Up</h3>
-                <div className=" p-4 w-[100%] flex flex-col justify-center items-center gap-[2rem]">
+                <div className=" p-1 w-[100%] flex flex-col justify-center items-center gap-[2rem]">
                         {error && <div className=" rounded-sm text-center text-[black] border w-[80%] self-center bg-[#ffa3a3]" ><h4>{error}</h4></div>}
-                        <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 md:w-[100%]'>
+                        <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 w-[100%]'>
                             <Input name="email" placeholder="Enter your email address" type="email" label="Email" value={formData.email} onChange={handleChange} error={errors.email} />
                             <Input name="password" placeholder="Enter your password" type="password" label="Password" value={formData.password} onChange={handleChange} error={errors.password}  />
                             <Input name="confirmPassword" placeholder="Confirm password" type="password" label="Confirm Password" value={formData.confirmPassword} onChange={handleChange} error={errors.confirmPassword}  />
@@ -114,7 +113,6 @@ const Signup = () => {
                             <p className="text-[1rem] text-[white]">Already have an account? <Link to="/login" className="text-[#00aeff]" >Login</Link></p>
                         </div>
                 </div>
-                
             </div>
         </div>
     )
