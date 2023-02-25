@@ -2,7 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Coins from "./screens/Coins/Coins";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import ProtectedRoute, { IsAuth } from "./components/ProtectedRoute";
+import {ProtectedRoute, IsAuth } from "./components/ProtectedRoute";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Dashboard from "./screens/Dashboard/Dashboard";
 import Homepage from "./screens/Homepage/Homepage";

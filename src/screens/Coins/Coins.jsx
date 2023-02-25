@@ -133,7 +133,7 @@ const Coins = () =>{
                    <Pagination
                        totalPages={totalPages}
                        currentPage={currentPage}
-                       pageNeigbors= {1}
+                       pageNeigbors = {1}
                        handleNextClick={handleNextClick}
                        handlePreviousClick={handlePreviousClick}
                        handleClick={handleClick}
@@ -161,7 +161,7 @@ const Coins = () =>{
                                        }
                                        return null
                            }).map((coinKey, index) => {
-                               const { rate } = coinsData[coinKey];
+                               const {rate} = coinsData[coinKey];
                            return(
                                <div key={index} className='flex flex-col'>
                                    <div className="text-[0.8rem] flex justify-between gap-2 border-b-2 border-[#7e6a17] p-3 mb-3 rounded-md">

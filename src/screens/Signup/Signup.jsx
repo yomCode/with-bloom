@@ -59,7 +59,7 @@ const Signup = () => {
             isValid = false;
           }else if(formData.password !== formData.confirmPassword){
             
-              setError("Passwords do not match");
+              setError("Passwords does not match");
               isValid = false;
           }
     

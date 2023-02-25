@@ -12,7 +12,7 @@ export const IsAuth = ({children}) => {
 }
 
 
-const ProtectedRoute = ({children}) => {
+export const ProtectedRoute = ({children}) => {
     const {user} = useUserAuth();
     console.log(user)
     if(!user){
@@ -21,4 +21,4 @@ const ProtectedRoute = ({children}) => {
     return children;
 }
 
-export default ProtectedRoute;
+// export default ProtectedRoute;
