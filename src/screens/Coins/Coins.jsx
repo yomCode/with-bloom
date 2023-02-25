@@ -146,9 +146,9 @@ const Coins = () =>{
                ) : (
                    <div className="w-100 text-[white] flex flex-col justify-center items-center gap-[2rem] py-[2rem] ">
                     <div className="w-[90%] flex justify-between items-center gap-2">
-                        <h6 className="basis-1/4">No.</h6>
-                        <h6 className="basis-2/4">Currency Pair</h6>
-                        <h6 className="basis-2/4">Price</h6>
+                        <h6 className="basis-1/4 text-center">No.</h6>
+                        <h6 className="basis-2/4 text-center">Currency Pair</h6>
+                        <h6 className="basis-2/4 text-center">Price</h6>
                     </div>
                     
                    {coinsData !== null ?(
@@ -164,10 +164,10 @@ const Coins = () =>{
                                const { rate} = coinsData[coinKey];
                            return(
                                <div key={index} className='flex flex-col'>
-                                   <div className="flex justify-between gap-2 border-b-2 border-[#7e6a17] p-3 mb-3 rounded-md">
-                                       <p className="basis-1/4">{serialNumber() + index}</p>
-                                       <p className="basis-2/4">{coinKey}</p>
-                                       <p className="basis-2/4">{rate.toFixed(2)}</p>
+                                   <div className="text-[0.8rem] flex justify-between gap-2 border-b-2 border-[#7e6a17] p-3 mb-3 rounded-md">
+                                       <p className="basis-1/4 px-2 text-center">{serialNumber() + index}</p>
+                                       <p className="basis-2/4 px-2 text-center">{coinKey}</p>
+                                       <p className="basis-2/4 px-2 text-center">{rate.toFixed(2)}</p>
                                    </div>
                                </div>
                            )})
