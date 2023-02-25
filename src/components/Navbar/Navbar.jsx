@@ -70,19 +70,19 @@ const Navbar = () => {
          {!menu && (
            <div className={Classes.mobile_menu}>
              <ul>
-               <li>
+               <li onClick={() => setMenu(!menu)}>
                  <Link to="/">Home</Link>
                </li>
-               <li>
+               <li onClick={() => setMenu(!menu)}>
                  <Link to="/">About</Link>
                </li>
-               <li>
+               <li onClick={() => setMenu(!menu)}>
                  <Link to="/">FAQ</Link>
                </li>
-               <li>
+               <li onClick={() => setMenu(!menu)}>
                  <Link to="/login">Login</Link>
                </li>                 
-               <li>
+               <li onClick={() => setMenu(!menu)}>
                  <Link to="/signup">Signup</Link>
                </li>
              </ul>
