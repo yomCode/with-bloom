@@ -89,12 +89,12 @@ function ExchangeRate() {
 
   return (
     <div className={Classes.container}>
-          < Card className='w-[90%] flex flex-col justify-center items-center'
+          < Card className='w-[90%] max-w-[30rem] flex flex-col justify-center items-center overflow-hidden'
           title={<Title level={2} />}
           >
-          <h5 className="text-[1rem]"> {amount} <span className="font-bold">{base}</span> is equivalent to </h5>
+          <h5 className="text-[1rem] text-center"> {amount} <span className="font-bold">{base}</span> is equivalent to </h5>
           {console.log('Amount: ', amount, 'Base: ', base, 'ConvertTo: ', convertTo, 'Result: ', result)}
-          <h3 className="text-[1rem] font-bold">
+          <h3 className="text-[1rem] text-center font-bold">
             {amount === "" ? "0 " + convertTo : result === null ? "Pair not supported" : result + " " + convertTo}
             
           </h3>

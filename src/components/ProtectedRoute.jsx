@@ -5,10 +5,10 @@ import { useUserAuth } from "../context/UserAuthContext";
 
 export const IsAuth = ({children}) => {
     const {user} = useUserAuth();
-    if(user){
-        return <Navigate to="/dashboard" />;
+    if(!user){
+        return children;
     }
-    return children;
+    return <Navigate to="/dashboard" />;
 }
 
 
