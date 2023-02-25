@@ -101,7 +101,7 @@ const Signup = () => {
         <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
             <div className=" flex flex-col justify-center items-center border-2 py-[1rem] w-[90%] max-w-[30rem]">
                 <h3 className="text-[white] text-[2rem] font-bold font-jost mb-[1rem]" >Sign Up</h3>
-                <div className=" p-4 w-[100%] flex flex-col gap-[2rem]">
+                <div className=" p-4 w-[100%] flex flex-col justify-center items-center gap-[2rem]">
                         {error && <div className=" rounded-sm text-center text-[black] border w-[80%] self-center bg-[#ffa3a3]" ><h4>{error}</h4></div>}
                         <form action="" onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-4 md:w-[100%]'>
                             <Input name="email" placeholder="Enter your email address" type="email" label="Email" value={formData.email} onChange={handleChange} error={errors.email} />
