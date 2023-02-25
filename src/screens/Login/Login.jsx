@@ -79,6 +79,9 @@ const Login = () => {
           case "auth/wrong-password":
             setError("Invalid email or password.");
             break;
+          case "auth/network-request-failed":
+            setError("An error occurred, make sure you are connected to the internet and try again!")
+            break;
           default:
             setError(err.message);
             break;
