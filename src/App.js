@@ -55,11 +55,11 @@ function App() {
         <Route
           path="/coins"
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <Sidebar>
                 <Coins />
               </Sidebar>
-            </ProtectedRoute>
+            // </ProtectedRoute>
           }
         />
         <Route

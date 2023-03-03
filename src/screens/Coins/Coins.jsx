@@ -65,15 +65,17 @@ const Coins = () =>{
 
   
    const memoizedGetCoinsData = useCallback(() => {
-       setLoading(true);
+       
        GetCoinsData();
-       setLoading(false);
+       
       
    }, [GetCoinsData]);
 
 
    useEffect(() => {
-       memoizedGetCoinsData();
+    setLoading(true);
+    memoizedGetCoinsData();
+    setLoading(false);
        // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
   

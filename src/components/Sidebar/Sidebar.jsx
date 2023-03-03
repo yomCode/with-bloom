@@ -30,6 +30,11 @@ const Sidebar = ({ children }) => {
            name: "Exchange Rate",
            icon: <AiFillCalculator />
        },
+       {
+        path: "/logout",
+        name: "Logout",
+        icon: < RiLogoutBoxLine />
+       }
    ]
 
 
@@ -64,27 +69,23 @@ const Sidebar = ({ children }) => {
    return(
        <div className={screenSize >= 1200 && 'flex min-h-[100vh]'}>
            {screenSize >= 1200 ? (
-               <div style={{width: isOpen ? "300px" : "50px"}} className={Classes.sidebar}>
-                   <div className={Classes.top_section}>
-                   <div style={{display: isOpen ? "block" : "none"}} className={Classes.logo}>
-                       <h2>WBloom</h2>
-                   </div>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className={Classes.bars}>
-                       <AiOutlineMenu onClick={toggle} />
-                   </div>
+               <div style={{width: isOpen ? "200px" : "90px"}} className={Classes.sidebar}>
+                   <div className='flex justify-between items-center p-2 mb-[2rem]'>
+                        <div style={{display: isOpen ? "block" : "none"}} className={Classes.logo}>
+                            <h2 className="text-[1.5rem] ">WBloom</h2>
+                        </div>
+                        <div style={{marginLeft: isOpen ? "50px" : "20px"}} className={Classes.bars}>
+                            <AiOutlineMenu onClick={toggle} />
+                        </div>
                    </div>
                   
-                   <div className={Classes.menu}>
+                   <div className='flex flex-col gap-[1rem]' style={{alignItems: isOpen? "start" : "center"}}>
                        {menuItems.map((item, index) => (
                            <NavLink to={item.path} key={index} activeclassname={Classes.active} className={Classes.link}>
                                <div className={Classes.icon}>{item.icon}</div>
-                               <div className={`${Classes.link_text} whitespace-nowrap`}>{item.name}</div>
+                               <div style={{display: isOpen? "block" : "none"}} className={`${Classes.link_text} whitespace-nowrap`}>{item.name}</div>
                            </ NavLink>
                        ))}
-                       <NavLink onClick={handleLogOut} className={Classes.link}>
-                           <div className={Classes.icon}>< RiLogoutBoxLine /></div>
-                           <div className={Classes.link_text}><h4>Logout</h4></div>
-                       </ NavLink>
                    </div>
                </div>
            ) : (
