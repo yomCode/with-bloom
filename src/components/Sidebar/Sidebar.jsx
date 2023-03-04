@@ -29,11 +29,6 @@ const Sidebar = ({ children }) => {
            path: "/exchange-rate",
            name: "Exchange Rate",
            icon: <AiFillCalculator />
-       },
-       {
-        path: "/logout",
-        name: "Logout",
-        icon: < RiLogoutBoxLine />
        }
    ]
 
@@ -86,6 +81,10 @@ const Sidebar = ({ children }) => {
                                <div style={{display: isOpen? "block" : "none"}} className={`${Classes.link_text} whitespace-nowrap`}>{item.name}</div>
                            </ NavLink>
                        ))}
+                       <NavLink onClick={handleLogOut} className={Classes.link} style={{}}>
+                           <div className={Classes.icon}>< RiLogoutBoxLine /></div>
+                           <div style={{display: isOpen? "block" : "none"}} className={Classes.link_text}><h4>Logout</h4></div>
+                       </ NavLink>
                    </div>
                </div>
            ) : (

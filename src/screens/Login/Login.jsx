@@ -93,7 +93,7 @@ const Login = () => {
 
   return (
     <div className="min-h-[100vh] w-[100vw] flex justify-center items-center">
-            <div className=" flex flex-col justify-center items-center border-2 py-[1rem] w-[90%] max-w-[30rem]">
+            <div className=" flex flex-col justify-center items-center border-2 py-[2rem] w-[90%] max-w-[30rem]">
                 <h3 className="text-[white] text-[2rem] font-bold font-jost mb-[1rem]" >Log In!</h3>
                 <div className=" p-1 w-[100%] flex flex-col justify-center items-center gap-[1rem]">
             {error && (
@@ -138,9 +138,9 @@ const Login = () => {
             <GoogleButton className="" onClick={handleGoogleLogin} />
           </div>
           <div className="mt-[1rem]">
-          <p className="text-[white] text-1xl md:text-2xl">
-            Dont have an account?{" "}
-            <Link to="/signup" className="text-[#00aeff] text-1xl md:text-2xl">
+          <p className="text-[white] text-1xl md:text-1xl">
+            Don't have an account?{" "}
+            <Link to="/signup" className="text-[#00aeff] text-1xl md:text-1xl">
               Signup
             </Link>
           </p>
